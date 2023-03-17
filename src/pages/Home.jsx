@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import ToggleMenu from '../components/ToggleMenu';
 
 function Home() {
-    const [ isOpen, setIsOpen ] = useState(true);
+    const [ isOpen, setIsOpen ] = useState(false);
     const data = [
         "We find loads",
         "Best Rate Negotiation",
