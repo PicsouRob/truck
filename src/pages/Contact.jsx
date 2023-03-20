@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 function Contact() {
     const [ message, setMessage ] = useState({
@@ -39,7 +40,12 @@ function Contact() {
     }
     
     return (
-        <div id='contact' className=''>
+        <motion.div id='contact' className=''
+            initial={ { scale: 0 } }
+            animate={ { scale: 1 } }
+            transition={{ duration: 0.75, ease: "easeOut" }}
+            exit={{ opacity: 1 }}
+        >
             <div className="max-w-7xl mx-auto px-6 md:px-8 py-20">
                 <div className="grid md:grid-cols-2 gap-8 place-items-center">
                     <div className="flex flex-col gap-6">
@@ -108,7 +114,7 @@ function Contact() {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

@@ -1,8 +1,14 @@
 import React from 'react';
+import { motion } from "framer-motion";
 
 function About() {
     return (
-        <div id='about' className='max-w-7xl mx-auto px-6 md:px-8'>
+        <motion.div id='about' className='max-w-7xl mx-auto px-6 md:px-8'
+            initial={ { scale: 0 } }
+            animate={ { scale: 1 } }
+            transition={{ duration: 0.75, ease: "easeOut" }}
+            exit={{ opacity: 1 }}
+        >
             <div className="py-16 space-y-6">
                 <div className="space-y-3 md:w-1/2">
                     <p className="uppercase text-[14px] text-secondary">about us</p>
@@ -32,7 +38,7 @@ function About() {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

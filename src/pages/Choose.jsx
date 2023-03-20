@@ -1,9 +1,16 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+
 import { choose } from '../helpers/choose';
 
 function Choose() {
     return (
-        <div id='about' className='bg-gray-50'>
+        <motion.div id='about' className='bg-gray-50'
+            initial={ { scale: 0 } }
+            animate={ { scale: 1 } }
+            transition={{ duration: 0.75, ease: "easeOut" }}
+            exit={{ opacity: 1 }}
+        >
             <div className="max-w-7xl mx-auto px-6 md:px-8">
                 <div className="py-16">
                     <div className="space-y-3 text-center">
@@ -23,7 +30,7 @@ function Choose() {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

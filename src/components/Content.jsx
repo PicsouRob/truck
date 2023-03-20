@@ -1,8 +1,14 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 function Content() {
     return (
-        <div className='bg-gray'> 
+        <motion.div className='bg-gray'
+            initial={ { scale: 0 } }
+            animate={ { scale: 1 } }
+            transition={{ duration: 0.75, ease: "easeOut" }}
+            exit={{ opacity: 1 }}
+        > 
             <div className="max-w-5xl mx-auto px-6 md:px-8 py-16">
                 <div className="shadow-md px-12 py-16 flex flex-wrap items-center justify-center md:justify-between gap-x-8 gap-y-12 bg-gray-50">
                     <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
@@ -19,7 +25,7 @@ function Content() {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

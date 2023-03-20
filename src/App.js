@@ -16,7 +16,9 @@ function App() {
     }
     
     return (
-        <div className="relative font-light text-gray-800 scroll-smooth">
+        <div
+            className="relative font-light text-gray-800 scroll-smooth h-full min-h-screen"
+        >
             <Home />
             <About />
             <AboutMore />

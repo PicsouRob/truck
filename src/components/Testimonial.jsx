@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+
 import { testimonial } from '../helpers/testimonial';
 
 function Testimonial() {
     const [ showText, setShowText ] = useState(2);
     
     return (
-        <div class="text-white bg-cover aspect-[9/3]"
+        <motion.div class="text-white bg-cover aspect-[9/3]"
             style={ {
                 background: 'linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url(/images/track-26.jpg)'
-            }}
+            } }
+            initial={ { scale: 0 } }
+            animate={ { scale: 1 } }
+            transition={{ duration: 0.75, ease: "easeOut" }}
+            exit={{ opacity: 1 }}
         >
             <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 space-y-12">
                 <div className="text-center space-y-3">
@@ -36,7 +42,7 @@ function Testimonial() {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

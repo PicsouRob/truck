@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 function AboutMore() {
     const data = [
@@ -9,7 +10,12 @@ function AboutMore() {
     ];
     
     return (
-        <div className='bg-gray-50'>
+        <motion.div className='bg-gray-50'
+            initial={ { scale: 0 } }
+            animate={ { scale: 1 } }
+            transition={{ duration: 0.75, ease: "easeOut" }}
+            exit={{ opacity: 1 }}
+        >
             <div className="max-w-7xl mx-auto px-6 md:px-8 py-16">
                 <div className="grid gap-8 md:grid-cols-2 place-items-center">
                     <div className="">
@@ -37,7 +43,7 @@ function AboutMore() {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

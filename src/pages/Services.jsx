@@ -1,9 +1,16 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+
 import { services } from '../helpers/services';
 
 function Services() {
     return (
-        <div id='services' className=''>
+        <motion.div id='services' className=''
+            initial={ { scale: 0 } }
+            animate={ { scale: 1 } }
+            transition={{ duration: 0.75, ease: "easeOut" }}
+            exit={{ opacity: 1 }}
+        >
             <div className="max-w-7xl px-6 md:px-8 mx-auto py-16">
                 <div className="w-full">
                     <div className="space-y-3 md:w-1/2 w-full">
@@ -24,7 +31,7 @@ function Services() {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 
